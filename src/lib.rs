@@ -211,7 +211,7 @@ impl DockerRegistryClientV2 {
 /// OAuth 2.0 token.
 #[derive(serde::Deserialize, Clone, Debug)]
 pub struct AuthToken {
-    access_token: String,
-    expires_in: i32,
-    issued_at: String,
+    pub access_token: String,
+    pub expires_in: i32,
+    pub issued_at: String,
 }

@@ -11,12 +11,14 @@ readme = "README.md"
 
 [dependencies]
 bytes = { version = "^0.5" }
-reqwest = { version = "^0.10", features = ["json"] }
+reqwest = { version = "^0.10", features = ["json"], default-features = false }
 tokio = { version = "^0.2", features = ["rt-core", "macros"] }
 serde = { version = "^1.0", features = ["derive"] }
 serde_json = { version = "^1.0" }
 sha2 = { version = "^0.8", optional = true }
 
 [features]
-default = ["sha256"]
+default = ["sha256", "default-tls"]
 sha256 = ["sha2"]
+default-tls = ["reqwest/default-tls"]
+rustls-tls = ["reqwest/rustls-tls"]
